@@ -1,0 +1,21 @@
+workspace(name = "distributed_systems")
+
+# Go build dependencies
+load("//bazel_deps/go:repos.bzl", "add_go_repos")
+add_go_repos()
+load("//bazel_deps/go:def.bzl", "add_go_rules_deps")
+add_go_rules_deps()
+
+
+# Java build dependencies
+# load("//bazel_deps/java:repos.bzl", "add_java_repos")
+# add_java_repos()
+# load("//bazel_deps/java:def.bzl", "add_java_rules_deps")
+# add_java_rules_deps()
+
+
+# Proto build dependencies
+load("//bazel_deps/proto:repos.bzl", "add_proto_repos")
+add_proto_repos()
+load("//bazel_deps/proto:def.bzl", "add_proto_rules_deps")
+add_proto_rules_deps()

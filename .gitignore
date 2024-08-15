@@ -7,6 +7,7 @@ bazel-bin
 bazel-distributed_systems
 bazel-out
 bazel-testlogs
+build_temp
 
 # Binaries for programs and plugins
 *.exe
