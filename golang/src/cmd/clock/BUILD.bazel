@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "clock_lib",
+    srcs = ["main.go"],
+    importpath = "distributed_systems/golang/src/cmd/clock",
+    visibility = ["//visibility:private"],
+    deps = ["//golang/src/clock"],
+)
+
+go_binary(
+    name = "clock",
+    embed = [":clock_lib"],
+    visibility = ["//visibility:public"],
+)

@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "gossip_lib",
+    srcs = ["main.go"],
+    importpath = "distributed_systems/golang/src/cmd/gossip",
+    visibility = ["//visibility:private"],
+    deps = ["//golang/src/gossip"],
+)
+
+go_binary(
+    name = "gossip",
+    embed = [":gossip_lib"],
+    visibility = ["//visibility:public"],
+)

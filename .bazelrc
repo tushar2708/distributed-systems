@@ -1,0 +1,11 @@
+# .bazelrc
+build --copt=-D_GLIBCXX_USE_CXX11_ABI=0
+build --spawn_strategy=standalone
+build --genrule_strategy=standalone
+
+# Platform-specific settings
+build:macos --cpu=darwin
+build:linux --cpu=k8
+
+
+common --enable_bzlmod

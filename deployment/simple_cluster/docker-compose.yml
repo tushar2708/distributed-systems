@@ -1,0 +1,31 @@
+services:
+  node1:
+    image: tushar-custom-alpine
+    container_name: node1
+    networks:
+      - simple-network
+    ports:
+      - "8081:8080"
+    command: ["httpd", "-f", "-p", "8080"]
+
+  node2:
+    image: tushar-custom-alpine
+    container_name: node2
+    networks:
+      - simple-network
+    ports:
+      - "8082:8080"
+    command: ["httpd", "-f", "-p", "8080"]
+    
+  node3:
+    image: tushar-custom-alpine
+    container_name: node3
+    networks:
+      - simple-network
+    ports:
+      - "8083:8080"
+    command: ["httpd", "-f", "-p", "8080"]
+
+networks:
+  simple-network:
+    driver: bridge
