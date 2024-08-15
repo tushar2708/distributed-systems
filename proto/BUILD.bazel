@@ -3,22 +3,21 @@ load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 load("@rules_proto//proto:defs.bzl", "proto_library")
 
 proto_library(
-    name = "gossip_proto",
-    srcs = ["gossip.proto"],
+    name = "protos",
+    srcs = glob(["*.proto"]),
     visibility = ["//visibility:public"],
 )
 
 go_proto_library(
-    name = "gossip_go_proto",
+    name = "go_protos",
     compilers = ["@io_bazel_rules_go//proto:go_grpc"],
     importpath = "distributed_systems/proto",
-    proto = ":gossip_proto",
+    proto = ":protos",
     visibility = ["//visibility:public"],
 )
 
 go_library(
     name = "proto",
-    embed = [":gossip_go_proto"],
-    importpath = "distributed_systems/proto",
+    srcs = glob(["*.pb.go"]),
     visibility = ["//visibility:public"],
 )
