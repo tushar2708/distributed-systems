@@ -4,7 +4,7 @@
 
 # Bazel build directories
 bazel-bin
-bazel-distributed_systems
+bazel-distributed-systems
 bazel-out
 bazel-testlogs
 build_temp
